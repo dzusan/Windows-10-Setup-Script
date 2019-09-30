@@ -1,7 +1,16 @@
-########
+# Installing Chocolatey
+Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
 
-Get-WmiObject Win32_OperatingSystem
-choco list --local-only
+# Chocolatey - enable installing without questions
+choco feature enable -n allowGlobalConfirmation
+
+# Chocolatey - install packages from list
+choco install packages.xml
+
+# Git config
+ssh-keygen
+git config --global user.email "lenkov@lenkov.work"
+git config --global user.name "Sergey Lenkov"
 
 ########
 
